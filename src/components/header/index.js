@@ -1,9 +1,17 @@
+// Core
+import React from 'react';
+
+// Components
+
+
+// Other
+import styles from './styles/index.module.scss';
 import Logo from '../../images/logo.svg';
 
-const Header = () => {
+export const Header = () => {
   return (
-    <div>
+    <header className={styles.header}>
       <img src={Logo} alt="" />
-    </div>
+    </header>
   )
 }
