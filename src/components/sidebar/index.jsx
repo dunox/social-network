@@ -7,7 +7,7 @@ import React from 'react';
 // Other
 import styles from './styles/index.module.scss';
 
-const sideBarMenu = ["Profile", "Messages", "News", "Music", "Settings"]
+const sideBarMenu = ["Profile", "Messages", "News", "Music", "Settings"];
 
 export const SideBar = () => {
   return (
