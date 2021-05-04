@@ -8,3 +8,7 @@
   "sideBar mainContent";
   max-width: 100vw;
 }
+.App-content {
+    grid-area: mainContent;
+    background-color: red;
+}
