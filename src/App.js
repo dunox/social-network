@@ -11,7 +11,7 @@ import {News} from "./components/news";
 import {Settings} from "./components/settings";
 
 // Other
-import "./App.css";
+import "./App.scss";
 
 const App = () => {
     return (
@@ -19,7 +19,7 @@ const App = () => {
             <div className="App">
                 <Header/>
                 <SideBar/>
-                <div className="App-content">
+                <div className="AppContent">
                     <Route path='/profile' component={Profile}/>
                     <Route path='/dialogs' component={Dialogs}/>
                     <Route path='/news' component={News}/>

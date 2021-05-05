@@ -7,8 +7,9 @@
   "header header"
   "sideBar mainContent";
   max-width: 100vw;
-}
-.App-content {
+
+  &Content {
     grid-area: mainContent;
-    background-color: red;
+    background-color: pink;
+  }
 }
