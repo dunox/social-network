@@ -7,7 +7,7 @@ import React from 'react';
 import styles from './styles/index.module.scss'
 import Hero from "../../../images/mount-house.jpg";
 
-export const Index = () => {
+export const ProfileInformation = () => {
     return (
         <div className={styles.profileInformation}>
             <div><img src={Hero} alt=""/></div>

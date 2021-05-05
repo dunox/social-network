@@ -2,19 +2,19 @@
 import React from 'react';
 
 // Components
+import { ProfileInformation } from "./profileInformation";
 import { MyPosts } from './myPosts';
+
 
 // Other
 import styles from './styles/index.module.scss';
-import Hero from '../../images/mount-house.jpg';
 
 
-export const Profile = () => {
+export const Profile = (props) => {
   return (
     <div className={styles.profile}>
-      <div><img src={Hero} alt=""/></div>
-      <div>Ava + description</div>
-      <MyPosts />
+      <ProfileInformation />
+      <MyPosts posts={props.posts}/>
     </div>
   )
 }
