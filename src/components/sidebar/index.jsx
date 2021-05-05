@@ -15,11 +15,11 @@ export const SideBar = () => {
       {/* {sideBarMenu.map((listItem, index) => { */}
         <nav>
           <ul>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Messages</a></li>
-            <li><a href="#">News</a></li>
-            <li><a href="#">Music</a></li>
-            <li><a href="#">Settings</a></li>
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/dialogs">Dialogs</a></li>
+            <li><a href="/news">News</a></li>
+            <li><a href="/music">Music</a></li>
+            <li><a href="/settings">Settings</a></li>
           </ul>
         </nav>
       {/* })} */}
