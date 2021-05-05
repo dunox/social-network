@@ -2,18 +2,30 @@
 import React from 'react';
 
 // Components
-import { Post } from './post';
+import {Post} from './post';
 
 // Other
 import styles from './styles/index.module.scss';
 
-export const MyPosts = () => {
-  return (
-    <div className={styles.myPosts}>
-      <div>My posts</div>
-      <div>New post</div>
-      <Post message="This is my first post" likes="15"/>
-      <Post message="I'm fine" likes="27"/>
-    </div>
-  )
+export const MyPosts = (props) => {
+
+    const postElementJSX = props.posts.map( post => <Post message={post.message} likesCounter={post.likesCounter}/> );
+
+    return (
+        <div className={styles.posts}>
+            <div>
+                <h3>My posts</h3>
+                <div>
+                    <textarea cols="30" rows="5"></textarea>
+                </div>
+                <div>
+                    <button>Add Post</button>
+                </div>
+            </div>
+            <div className={styles.postsBlock}>
+                { postElementJSX }
+            </div>
+
+        </div>
+    )
 }

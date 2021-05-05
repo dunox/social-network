@@ -13,7 +13,7 @@ export const Post = (props) => {
       <div className={styles.post}>
         <img src={Avatar} alt=""/>
         <span>{props.message}</span>
-        <span className={styles.like}>Likes: {props.likes}</span>
+        <span className={styles.like}>Likes: {props.likesCounter}</span>
       </div>
   )
 }
