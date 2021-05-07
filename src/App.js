@@ -1,5 +1,5 @@
 // Core
-import { BrowserRouter, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 // Components
 import { SideBar } from './components/sidebar';
@@ -15,19 +15,17 @@ import "./App.scss";
 
 const App = (props) => {
     return (
-        <BrowserRouter>
-            <div className="App">
-                <Header/>
-                <SideBar/>
-                <div className="AppContent">
-                    <Route path='/profile' render={() => <Profile state={props.state.profilePage}/>}/>
-                    <Route path='/dialogs' render={() => <Dialogs state={props.state.messagePage} />}/>
-                    <Route path='/news' component={News}/>
-                    <Route path='/music' component={Music}/>
-                    <Route path='/settings' component={Settings}/>
-                </div>
+        <div className="App">
+            <Header/>
+            <SideBar/>
+            <div className="AppContent">
+                <Route path='/profile' render={() => <Profile state={props.state.profilePage}/>}/>
+                <Route path='/dialogs' render={() => <Dialogs state={props.state.messagePage} />}/>
+                <Route path='/news' component={News}/>
+                <Route path='/music' component={Music}/>
+                <Route path='/settings' component={Settings}/>
             </div>
-        </BrowserRouter>
+        </div>
     );
 }
 

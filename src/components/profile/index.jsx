@@ -11,10 +11,10 @@ import styles from './styles/index.module.scss';
 
 
 export const Profile = (props) => {
-  return (
+    return (
     <div className={styles.profile}>
       <ProfileInformation />
-      <MyPosts posts={props.posts}/>
+      <MyPosts posts={props.state.postData}/>
     </div>
   )
 }
