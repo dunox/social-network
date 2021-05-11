@@ -10,6 +10,13 @@ import styles from './styles/index.module.scss';
 
 
 export const Dialogs = (props) => {
+
+  const newMessageItem = React.createRef();
+
+  const newMessage = () => {
+      alert(newMessageItem.current.value);
+  }
+  
     const dialogElementJSX = props.state.dialogData.map( dialog => <DialogItem  name={dialog.name} id={dialog.id} /> );
     const messageElementJSX = props.state.messageData.map( message => <MessageItem message={message.message} id={message.id}/> );
 
@@ -21,6 +28,8 @@ export const Dialogs = (props) => {
      <div className={styles.messageList}>
          { messageElementJSX }
      </div>
+     <textarea ref={newMessageItem} name="" id="" cols="30" rows="5"></textarea>
+            <button onClick={newMessage}> Add message</button>
     </div>
   )
 }
