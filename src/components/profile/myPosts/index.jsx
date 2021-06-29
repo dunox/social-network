@@ -8,10 +8,19 @@ import {Post} from './post';
 import styles from './styles/index.module.scss';
 
 export const MyPosts = (props) => {
+
     const newPostElement = React.createRef();
+
     const newPost = () => {
-        alert(newPostElement.current.value)
+        let postText = newPostElement.current.value;
+        props.addPost(postText);
+        newPostElement.current.value = ''
     }
+
+    const onChange = () => {
+        
+    }
+    
     const postElementJSX = props.posts.map( post => <Post message={post.message} likesCounter={post.likesCounter}/> );
 
     return (
@@ -19,7 +28,13 @@ export const MyPosts = (props) => {
             <div>
                 <h3>My posts</h3>
                 <div>
-                    <textarea ref={newPostElement} cols="30" rows="5"></textarea>
+                    <textarea 
+                    ref={newPostElement} 
+                    cols="30" 
+                    rows="5"
+                    onChange={onChange}
+                    value={props.newPostText}
+                    />
                 </div>
                 <div>
                     <button onClick={newPost}>Add Post</button>

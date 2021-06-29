@@ -10,11 +10,11 @@ import styles from './styles/index.module.scss';
 
 
 export const Dialogs = (props) => {
-
   const newMessageItem = React.createRef();
 
   const newMessage = () => {
-      alert(newMessageItem.current.value);
+    let messageText = newMessageItem.current.value;
+    props.addMessage(messageText);
   }
   
     const dialogElementJSX = props.state.dialogData.map( dialog => <DialogItem  name={dialog.name} id={dialog.id} /> );

@@ -14,7 +14,7 @@ export const Profile = (props) => {
     return (
     <div className={styles.profile}>
       <ProfileInformation />
-      <MyPosts posts={props.state.postData}/>
+      <MyPosts posts={props.profilePage.postData} addPost={props.addPost} newPostText={props.profilePage.newPostText}/>
     </div>
   )
 }
