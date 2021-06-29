@@ -12,13 +12,13 @@ export const MyPosts = (props) => {
     const newPostElement = React.createRef();
 
     const newPost = () => {
-        let postText = newPostElement.current.value;
-        props.addPost(postText);
-        newPostElement.current.value = ''
+        props.addPost();
+        props.updateNewPostText('');
     }
 
     const onChange = () => {
-        
+        let postText = newPostElement.current.value;
+        props.updateNewPostText(postText);
     }
     
     const postElementJSX = props.posts.map( post => <Post message={post.message} likesCounter={post.likesCounter}/> );

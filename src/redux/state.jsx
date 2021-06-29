@@ -6,7 +6,7 @@ export const state = {
                 { id: 1, message: 'This is my first post', likesCounter: 12},
                 { id: 1, message: 'I\'m fine', likesCounter: 27},
             ],
-            newPostText: 'kamasutra',
+            newPostText: '',
 
     },
     messagePage: {
@@ -22,10 +22,10 @@ export const state = {
     },
 }
 
-export const addPost = (postText) => {
+export const addPost = () => {
     let newPost = {
         id: 3,
-        message: postText,
+        message: state.profilePage.newPostText,
         likesCounter: 0
     }
     state.profilePage.postData.push(newPost);
@@ -42,6 +42,7 @@ export const addMessage = (messageText) => {
     rerenderEntireTree(state);
 }
 
-export const updatePostText = () => {
-    
+export const updateNewPostText = (newText) => {
+    state.profilePage.newPostText = newText;
+    rerenderEntireTree(state);
 }
