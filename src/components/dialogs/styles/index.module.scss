@@ -15,8 +15,9 @@
     }
   }
   .message {
-    padding: 10px;
-
+    &Item {
+      padding: 10px;
+    }
     &List {
 
     }
