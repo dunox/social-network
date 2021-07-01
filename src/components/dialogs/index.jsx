@@ -33,14 +33,14 @@ export const Dialogs = (props) => {
          { messageElementJSX }
      </div>
      <textarea 
-      ref={newMessageItem}
-      onChange={updateMassegeText}
-      value={props.messagePage.newMessageText}
-      name="" 
-      id="" 
-      cols="30" 
-      rows="5"
-      ></textarea>
+        ref={newMessageItem}
+        onChange={updateMassegeText}
+        value={props.messagePage.newMessageText}
+        name="" 
+        id="" 
+        cols="30" 
+        rows="5"
+      />
             <button onClick={newMessage}> Add message</button>
     </div>
   )
