@@ -7,7 +7,7 @@ import { MessageItem } from "./messageItem/messageItem";
 
 // Other
 import styles from './styles/index.module.scss';
-import {updateMassegeTextCreator, sendMessageCreator} from './../../redux/state'
+import {updateMessageTextCreator, sendMessageCreator} from './../../redux/messagesReducer'
 
 
 export const Dialogs = (props) => {
@@ -15,12 +15,12 @@ export const Dialogs = (props) => {
 
   const onSendMessageClick = () => {
     props.dispatch(sendMessageCreator());
-    props.dispatch(updateMassegeTextCreator(''));
+    props.dispatch(updateMessageTextCreator(''));
   }
   
-  const updateMassegeText = () => {
+  const updateMessageText = () => {
     let messageText = newMessageItem.current.value;
-    props.dispatch(updateMassegeTextCreator(messageText));
+    props.dispatch(updateMessageTextCreator(messageText));
   }
   const dialogElementJSX = props.messagePage.dialogData.map( dialog => <DialogItem  name={dialog.name} id={dialog.id} /> );
   const messageElementJSX = props.messagePage.messageData.map( message => <MessageItem message={message.message} id={message.id}/> );
@@ -35,7 +35,7 @@ export const Dialogs = (props) => {
      </div>
      <textarea 
         ref={newMessageItem}
-        onChange={updateMassegeText}
+        onChange={updateMessageText}
         value={props.messagePage.newMessageText}
         name="" 
         id="" 

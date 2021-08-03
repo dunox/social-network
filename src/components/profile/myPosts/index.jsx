@@ -6,7 +6,7 @@ import {Post} from './post';
 
 // Other
 import styles from './styles/index.module.scss';
-import {updatePostTextCreator, addPostCreator} from './../../../redux/state'
+import {updatePostTextCreator, addPostCreator} from './../../../redux/profileReducer'
 
 
 export const MyPosts = (props) => {
