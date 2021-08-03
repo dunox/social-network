@@ -6,19 +6,21 @@ import {Post} from './post';
 
 // Other
 import styles from './styles/index.module.scss';
+import {updatePostTextCreator, addPostCreator} from './../../../redux/state'
+
 
 export const MyPosts = (props) => {
 
     const newPostElement = React.createRef();
 
     const newPost = () => {
-        props.addPost();
-        props.updateNewPostText('');
+        props.dispatch(addPostCreator());
+        props.dispatch(updatePostTextCreator(''))
     }
 
     const onChange = () => {
         let postText = newPostElement.current.value;
-        props.updateNewPostText(postText);
+        props.dispatch(updatePostTextCreator(postText));
     }
     
     const postElementJSX = props.posts.map( post => <Post message={post.message} likesCounter={post.likesCounter}/> );

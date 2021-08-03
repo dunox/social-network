@@ -7,19 +7,20 @@ import { MessageItem } from "./messageItem/messageItem";
 
 // Other
 import styles from './styles/index.module.scss';
+import {updateMassegeTextCreator, sendMessageCreator} from './../../redux/state'
 
 
 export const Dialogs = (props) => {
   const newMessageItem = React.createRef();
 
-  const newMessage = () => {
-    props.addMessage();
-    props.updateNewMessageText('');
+  const onSendMessageClick = () => {
+    props.dispatch(sendMessageCreator());
+    props.dispatch(updateMassegeTextCreator(''));
   }
   
   const updateMassegeText = () => {
     let messageText = newMessageItem.current.value;
-    props.updateNewMessageText(messageText);
+    props.dispatch(updateMassegeTextCreator(messageText));
   }
   const dialogElementJSX = props.messagePage.dialogData.map( dialog => <DialogItem  name={dialog.name} id={dialog.id} /> );
   const messageElementJSX = props.messagePage.messageData.map( message => <MessageItem message={message.message} id={message.id}/> );
@@ -41,7 +42,7 @@ export const Dialogs = (props) => {
         cols="30" 
         rows="5"
       />
-            <button onClick={newMessage}> Add message</button>
+            <button onClick={onSendMessageClick}> Add message</button>
     </div>
   )
 }
