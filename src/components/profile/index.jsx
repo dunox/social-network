@@ -1,24 +1,20 @@
-// Core
+// Corestore.getState()
 import React from 'react';
 
 // Components
 import { ProfileInformation } from "./profileInformation";
-import { MyPosts } from './myPosts';
-
+import { MyPostsContainer } from "./myPosts/myPostsContainer";
 
 // Other
 import styles from './styles/index.module.scss';
 
 
-export const Profile = (props) => {
+
+export const Profile = () => {
     return (
     <div className={styles.profile}>
       <ProfileInformation />
-      <MyPosts 
-        posts={props.profilePage.postData}
-        newPostText={props.profilePage.newPostText}
-        dispatch={props.dispatch}
-      />
+      <MyPostsContainer />
     </div>
   )
 }

@@ -2,11 +2,10 @@
 import React from 'react';
 
 // Components
-
+import {NavLink} from "react-router-dom";
 
 // Other
 import styles from './styles/index.module.scss';
-import {NavLink} from "react-router-dom";
 
 const sideBarMenu = ["Profile", "Messages", "News", "Music", "Settings"];
 
