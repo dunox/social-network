@@ -21,7 +21,7 @@ let mapDispatchToProps = (dispatch) => {
     updateMessageText: (messageText) => {
       dispatch(updateMessageTextCreator(messageText));
     },
-    onSendMessageClick: () => {
+    sendMessage: () => {
       dispatch(sendMessageCreator());
       dispatch(updateMessageTextCreator(''));
     }

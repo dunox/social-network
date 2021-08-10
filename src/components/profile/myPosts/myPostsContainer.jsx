@@ -10,7 +10,7 @@ import { updatePostTextCreator, addPostCreator } from './../../../redux/profileR
 
 let mapStateToProps = (state) => {
     return {
-        newPostText: state.profilePage.postData,
+        newPostText: state.profilePage.newPostText,
         posts: state.profilePage.postData
     }
 }
