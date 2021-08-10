@@ -1,4 +1,4 @@
-const SEND_MESSAGE = "SEND-MESSAGE";
+const  SEND_MESSAGE = "SEND-MESSAGE";
 const UPDATE_MESSAGE_TEXT = "UPDATE-MESSAGE-TEXT";
 
 let initialState = {
@@ -20,20 +20,17 @@ const messageReducer = (state = initialState, action) => {
                 id: 3,
                 message: state.newMessageText
             }
-            let stateCopy = {...state};
-
-            stateCopy.messageData = [...state.messageData];
-            stateCopy.dialogData.push({id: 3, name: 'Andriy'});
-            stateCopy.messageData.push(newMessage);
-
-            return stateCopy;
+            return {
+                ...state,
+                messageData: [...state.messageData, newMessage],
+                dialogData: [...state.dialogData, {id: 3, name: 'Andriy'}]
+            }
         }
         case UPDATE_MESSAGE_TEXT: {
-            let stateCopy = {...state};
-
-            stateCopy.newMessageText = action.messageText;
-
-            return stateCopy;
+            return {
+                ...state,
+                newMessageText: action.messageText
+            }
         }
         default:
             return state;
